@@ -146,7 +146,7 @@ public class TransporteServicio {
                 .filter(Viaje::isIncidencia)
                 .map(Viaje::getOrigen)
                 .distinct()
-                .collect(Collectors.toSet());
+                .collect(Collectors.toCollection(TreeSet::new));
     }
 
     /**
