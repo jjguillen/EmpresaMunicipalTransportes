@@ -66,7 +66,7 @@ public class TransporteServicio {
     public Optional<Viaje> getPrimerViaje(LocalDate fecha) {
         return viajes.stream()
                 .filter(v -> v.getFechaViaje().equals(fecha))
-                .min(Comparator.comparing(Viaje::getFechaViaje));
+                .min(Comparator.comparing(Viaje::getHoraViaje));
     }
 
     /**
