@@ -171,7 +171,7 @@ public class TransporteServicio {
     public List<String> getViajesBaratos(double precioMax) {
         return viajes.stream()
                 .filter(v -> v.getPrecio() <= precioMax)
-                .sorted(Comparator.comparing(Viaje::getDuracionMinutos))
+                .sorted(Comparator.comparing(Viaje::getPrecio))
                 .map(v -> v.getLineaTransporte() + " | " + v.getOrigen() + " -> " +
                         v.getDestino() + " | " + v.getPrecio() + "€")
                 .distinct()
