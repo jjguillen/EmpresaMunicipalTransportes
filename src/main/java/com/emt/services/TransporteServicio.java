@@ -180,14 +180,14 @@ public class TransporteServicio {
 
     /**
      * Verificar si **todos** los viajeros con tipo de abono `ANUAL` tienen un saldo de
-     * puntos superior al valor dad
+     * puntos superior al valor dado
      * @param puntos
      * @return
      */
     public boolean todosAnualesSuperanPuntos(int puntos) {
         return viajes.stream()
                 .filter(v -> v.getViajero().getTipoAbono().equals(TipoAbono.ANUAL))
-                .allMatch(v -> v.getViajero().getSaldoPuntos() >= puntos);
+                .allMatch(v -> v.getViajero().getSaldoPuntos() > puntos);
     }
 
     /**
